@@ -1,5 +1,3 @@
-module.exports = Character;
-
 class Character {
     constructor(level = 1, attack, defence, health = 100) {
         this.level = level;
@@ -28,3 +26,5 @@ class Character {
         }
     }
 }
+
+module.exports = Character;
