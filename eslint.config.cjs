@@ -4,26 +4,24 @@ const jestPlugin = require("eslint-plugin-jest");
 
 module.exports = [
   { 
-    files: ["**/*.{js,mjs,cjs}"], 
-    plugins: { js }, 
-    extends: ["js/recommended"], 
-    languageOptions: { 
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
+    files: ["**/*.{js,mjs,cjs}"],
     ignores: [
       "dist/**",
       "node_modules/**",
     ],
-    files: ["/*.test.js"],
+    plugins: { js: js }, 
+    extends: ["js.config.recommended"], 
+    languageOptions: { 
+      globals: Object.assign({}, globals.browser, globals.node),
+    },
+  },
+
+  {
+    files: ["**/*.test.js"],
     plugins: { jest: jestPlugin },
     extends: ["plugin:jest/recommended"],
     languageOptions: {
-      globals: {
-        ...jestPlugin.environments.globals.globals,
-      },
+      globals: jestPlugin.environments.jest.globals,
     },
   },
 ];
