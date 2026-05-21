@@ -1,4 +1,4 @@
-const Character = require('../Character.js');
+import Character from '../Character.js';
 
 test('creating a character with preset values', () => {
     const character = new Character();

@@ -1,4 +1,4 @@
-class Character {
+export default class Character {
     constructor(level = 1, attack, defence, health = 100) {
         this.level = level;
         this.attack = attack;
@@ -26,5 +26,3 @@ class Character {
         }
     }
 }
-
-module.exports = Character;

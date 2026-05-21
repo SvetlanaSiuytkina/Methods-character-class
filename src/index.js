@@ -1,2 +1,2 @@
-const character = require('./Character');
-module.exports = {character};
+import Character from './Character.js';
+export {Character};
